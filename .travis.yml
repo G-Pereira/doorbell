@@ -37,8 +37,20 @@ install:
   - python -m pip install --user -r $IDF_PATH/requirements.txt
 
 script:
+  ##### COMPILE RINGER #####
   # Go back to the git repository
   - cd $PROJECT_PATH
+  # Change to ringer directory
+  - cd ringer
+  # Update configuration so that kconfig doesn't start interactive mode
+  - make defconfig
+  # Build project from the git repository
+  - make
+  ##### COMPILE INTERCOM #####
+  # Go back to the git repository
+  - cd $PROJECT_PATH
+  # Change to intercom directory
+  - cd intercom
   # Update configuration so that kconfig doesn't start interactive mode
   - make defconfig
   # Build project from the git repository
