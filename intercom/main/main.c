@@ -6,8 +6,8 @@
    software is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
    CONDITIONS OF ANY KIND, either express or implied.
 */
-#include <stdio.h>
-#include <stdlib.h>
+//#include <stdio.h>
+//#include <stdlib.h>
 #include <string.h>
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
@@ -154,9 +154,8 @@ void lcd_init(spi_device_handle_t spi)
         if (lcd_init_cmds[cmd].databytes&0x80) {
             vTaskDelay(100 / portTICK_RATE_MS);
         }
-        cmd++;
     }
-    printf("%d\n", cmd);
+    printf("cmd max: %d\n", cmd);
     ///Enable backlight
     gpio_set_level(CONFIG_PIN_BCKL, 1);
 }
@@ -244,33 +243,21 @@ static void send_line_finish(spi_device_handle_t spi)
 //while the previous one is being sent.
 static void display_pretty_colors(spi_device_handle_t spi)
 {
-    uint16_t *lines[2];
+    uint16_t *line;
     //Allocate memory for the pixel buffers
-    for (int i=0; i<2; i++) {
-        lines[i]=heap_caps_malloc(320*PARALLEL_LINES*sizeof(uint16_t), MALLOC_CAP_DMA);
-        assert(lines[i]!=NULL);
-    }
-    int frame=0;
-    //Indexes of the line currently being sent to the LCD and the line we're calculating.
-    int sending_line=-1;
-    int calc_line=0;
+    line=heap_caps_malloc(320*PARALLEL_LINES*sizeof(uint16_t), MALLOC_CAP_DMA);
+    assert(line!=NULL);
 
-    while(1) {
-        frame++;
-        for (int y=0; y<240; y+=PARALLEL_LINES) {
-            //Calculate a line.
-            pretty_effect_calc_lines(lines[calc_line], y, frame, PARALLEL_LINES);
-            //Finish up the sending process of the previous line, if any
-            if (sending_line!=-1) send_line_finish(spi);
-            //Swap sending_line and calc_line
-            sending_line=calc_line;
-            calc_line=(calc_line==1)?0:1;
-            //Send the line we currently calculated.
-            send_lines(spi, y, lines[sending_line]);
-            //The line set is queued up for sending now; the actual sending happens in the
-            //background. We can go on to calculate the next line set as long as we do not
-            //touch line[sending_line]; the SPI sending process is still reading from that.
-        }
+    for (int y=0; y<240; y+=PARALLEL_LINES) {
+        //Calculate a line.
+        pretty_effect_calc_lines(line, y, PARALLEL_LINES);
+        //Finish up the sending process of the previous line, if any
+        if (y!=0) send_line_finish(spi);
+        //Send the line we currently calculated.
+        send_lines(spi, y, line);
+        //The line set is queued up for sending now; the actual sending happens in the
+        //background. We can go on to calculate the next line set as long as we do not
+        //touch line; the SPI sending process is still reading from that.
     }
 }
 

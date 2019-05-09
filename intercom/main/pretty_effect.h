@@ -8,10 +8,9 @@
  *
  * @param dest Destination for the pixels. Assumed to be LINECT * 320 16-bit pixel values.
  * @param line Starting line of the chunk of lines.
- * @param frame Current frame, used for animation
  * @param linect Amount of lines to calculate
  */
-void pretty_effect_calc_lines(uint16_t *dest, int line, int frame, int linect);
+void pretty_effect_calc_lines(uint16_t *dest, int line, int linect);
 
 
 /**
