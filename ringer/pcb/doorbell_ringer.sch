@@ -1,0 +1,245 @@
+EESchema Schematic File Version 4
+LIBS:doorbell_ringer-cache
+EELAYER 29 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L RF_Module:ESP32-WROOM-32 U1
+U 1 1 5CE6D815
+P 5750 3700
+F 0 "U1" H 5750 5281 50  0000 C CNN
+F 1 "ESP32-WROOM-32" H 5750 5190 50  0000 C CNN
+F 2 "RF_Module:ESP32-WROOM-32" H 5750 2200 50  0001 C CNN
+F 3 "https://www.espressif.com/sites/default/files/documentation/esp32-wroom-32_datasheet_en.pdf" H 5450 3750 50  0001 C CNN
+	1    5750 3700
+	1    0    0    -1  
+$EndComp
+Text Notes 1250 700  0    50   ~ 0
+Microphone
+$Comp
+L Device:R R2
+U 1 1 5CE70A20
+P 1850 1450
+F 0 "R2" V 1643 1450 50  0000 C CNN
+F 1 "100k" V 1734 1450 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 1780 1450 50  0001 C CNN
+F 3 "~" H 1850 1450 50  0001 C CNN
+	1    1850 1450
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	2000 1450 2100 1450
+Wire Wire Line
+	2100 1450 2100 1500
+$Comp
+L Device:R R3
+U 1 1 5CE74174
+P 2100 1200
+F 0 "R3" H 2170 1246 50  0000 L CNN
+F 1 "10k" H 2170 1155 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 2030 1200 50  0001 C CNN
+F 3 "~" H 2100 1200 50  0001 C CNN
+	1    2100 1200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2100 1350 2100 1450
+Connection ~ 2100 1450
+$Comp
+L power:+3.3V #PWR01
+U 1 1 5CE757C7
+P 1500 950
+F 0 "#PWR01" H 1500 800 50  0001 C CNN
+F 1 "+3.3V" H 1515 1123 50  0000 C CNN
+F 2 "" H 1500 950 50  0001 C CNN
+F 3 "" H 1500 950 50  0001 C CNN
+	1    1500 950 
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R1
+U 1 1 5CE77201
+P 850 1350
+F 0 "R1" H 920 1396 50  0000 L CNN
+F 1 "10k" H 920 1305 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 780 1350 50  0001 C CNN
+F 3 "~" H 850 1350 50  0001 C CNN
+	1    850  1350
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C1
+U 1 1 5CE782CF
+P 1350 1600
+F 0 "C1" V 1098 1600 50  0000 C CNN
+F 1 "100n" V 1189 1600 50  0000 C CNN
+F 2 "" H 1388 1450 50  0001 C CNN
+F 3 "~" H 1350 1600 50  0001 C CNN
+	1    1350 1600
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	850  1500 850  1600
+Wire Wire Line
+	850  1600 1200 1600
+$Comp
+L Device:Microphone_Condenser MK1
+U 1 1 5CE7ACF3
+P 850 1800
+F 0 "MK1" H 980 1846 50  0000 L CNN
+F 1 "Microphone_Condenser" H 980 1755 50  0000 L CNN
+F 2 "" V 850 1900 50  0001 C CNN
+F 3 "~" V 850 1900 50  0001 C CNN
+	1    850  1800
+	1    0    0    -1  
+$EndComp
+Connection ~ 850  1600
+$Comp
+L power:GND #PWR02
+U 1 1 5CE8F7B5
+P 1550 2100
+F 0 "#PWR02" H 1550 1850 50  0001 C CNN
+F 1 "GND" H 1555 1927 50  0000 C CNN
+F 2 "" H 1550 2100 50  0001 C CNN
+F 3 "" H 1550 2100 50  0001 C CNN
+	1    1550 2100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	850  2000 850  2050
+Wire Wire Line
+	850  2050 1550 2050
+Wire Wire Line
+	1550 2050 1550 2100
+Wire Wire Line
+	2100 1900 2100 2050
+Wire Wire Line
+	2100 2050 1550 2050
+Connection ~ 1550 2050
+$Comp
+L Device:C C2
+U 1 1 5CE9044F
+P 2500 1450
+F 0 "C2" V 2248 1450 50  0000 C CNN
+F 1 "100n" V 2339 1450 50  0000 C CNN
+F 2 "" H 2538 1300 50  0001 C CNN
+F 3 "~" H 2500 1450 50  0001 C CNN
+	1    2500 1450
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	1500 1600 1600 1600
+Wire Wire Line
+	1600 1600 1600 1450
+Wire Wire Line
+	1600 1450 1700 1450
+Wire Wire Line
+	1600 1700 1600 1600
+Wire Wire Line
+	1600 1700 1800 1700
+Connection ~ 1600 1600
+Wire Wire Line
+	2350 1450 2100 1450
+Wire Wire Line
+	850  1200 850  1000
+Wire Wire Line
+	850  1000 1500 1000
+Wire Wire Line
+	2100 1000 2100 1050
+Wire Wire Line
+	1500 950  1500 1000
+Connection ~ 1500 1000
+Wire Wire Line
+	1500 1000 2100 1000
+Text Label 2650 1450 0    50   ~ 0
+Microphone
+$Comp
+L Transistor_BJT:MMBT3904 Q1
+U 1 1 5CE9389E
+P 2000 1700
+F 0 "Q1" H 2191 1746 50  0000 L CNN
+F 1 "MMBT3904" H 2191 1655 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 2200 1625 50  0001 L CIN
+F 3 "https://www.fairchildsemi.com/datasheets/2N/2N3904.pdf" H 2000 1700 50  0001 L CNN
+	1    2000 1700
+	1    0    0    -1  
+$EndComp
+Text Notes 10150 750  0    50   ~ 0
+Decoupling Capacitors
+$Comp
+L power:+3.3V #PWR03
+U 1 1 5CEAEAA9
+P 10550 1050
+F 0 "#PWR03" H 10550 900 50  0001 C CNN
+F 1 "+3.3V" H 10565 1223 50  0000 C CNN
+F 2 "" H 10550 1050 50  0001 C CNN
+F 3 "" H 10550 1050 50  0001 C CNN
+	1    10550 1050
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C3
+U 1 1 5CEAEFB4
+P 10550 1300
+F 0 "C3" H 10665 1346 50  0000 L CNN
+F 1 "100n" H 10665 1255 50  0000 L CNN
+F 2 "" H 10588 1150 50  0001 C CNN
+F 3 "~" H 10550 1300 50  0001 C CNN
+	1    10550 1300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	10550 1550 10550 1450
+Wire Wire Line
+	10550 1150 10550 1050
+Text Label 5150 2700 2    50   ~ 0
+Microphone
+$Comp
+L power:+3.3V #PWR05
+U 1 1 5CEBCA5D
+P 5750 2050
+F 0 "#PWR05" H 5750 1900 50  0001 C CNN
+F 1 "+3.3V" H 5765 2223 50  0000 C CNN
+F 2 "" H 5750 2050 50  0001 C CNN
+F 3 "" H 5750 2050 50  0001 C CNN
+	1    5750 2050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5750 2050 5750 2300
+$Comp
+L power:GND #PWR06
+U 1 1 5CEBE9B3
+P 5750 5150
+F 0 "#PWR06" H 5750 4900 50  0001 C CNN
+F 1 "GND" H 5755 4977 50  0000 C CNN
+F 2 "" H 5750 5150 50  0001 C CNN
+F 3 "" H 5750 5150 50  0001 C CNN
+	1    5750 5150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5750 5150 5750 5100
+$Comp
+L power:GND #PWR04
+U 1 1 5CEC0DEC
+P 10550 1550
+F 0 "#PWR04" H 10550 1300 50  0001 C CNN
+F 1 "GND" H 10555 1377 50  0000 C CNN
+F 2 "" H 10550 1550 50  0001 C CNN
+F 3 "" H 10550 1550 50  0001 C CNN
+	1    10550 1550
+	1    0    0    -1  
+$EndComp
+$EndSCHEMATC
