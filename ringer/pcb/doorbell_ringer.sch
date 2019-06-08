@@ -45,28 +45,6 @@ F 3 "" H 1800 1750 50  0001 C CNN
 	1    1800 1750
 	1    0    0    -1  
 $EndComp
-$Comp
-L Device:R R3
-U 1 1 5CF9947D
-P 1800 1950
-F 0 "R3" H 1870 1996 50  0000 L CNN
-F 1 "100k" H 1870 1905 50  0000 L CNN
-F 2 "" V 1730 1950 50  0001 C CNN
-F 3 "~" H 1800 1950 50  0001 C CNN
-	1    1800 1950
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:R R4
-U 1 1 5CF9968A
-P 1800 2300
-F 0 "R4" H 1870 2346 50  0000 L CNN
-F 1 "100k" H 1870 2255 50  0000 L CNN
-F 2 "" V 1730 2300 50  0001 C CNN
-F 3 "~" H 1800 2300 50  0001 C CNN
-	1    1800 2300
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	1800 2150 1800 2100
 $Comp
@@ -229,28 +207,6 @@ $EndComp
 Wire Wire Line
 	800  3350 800  3250
 $Comp
-L Device:R R2
-U 1 1 5CF3A31B
-P 2400 1250
-F 0 "R2" V 2193 1250 50  0000 C CNN
-F 1 "75k" V 2284 1250 50  0000 C CNN
-F 2 "" V 2330 1250 50  0001 C CNN
-F 3 "~" H 2400 1250 50  0001 C CNN
-	1    2400 1250
-	0    1    1    0   
-$EndComp
-$Comp
-L Device:C C3
-U 1 1 5CFFC42F
-P 2400 900
-F 0 "C3" V 2148 900 50  0000 C CNN
-F 1 "15p" V 2239 900 50  0000 C CNN
-F 2 "" H 2438 750 50  0001 C CNN
-F 3 "~" H 2400 900 50  0001 C CNN
-	1    2400 900 
-	0    1    1    0   
-$EndComp
-$Comp
 L Device:R R1
 U 1 1 5CFCC6D1
 P 800 1300
@@ -261,8 +217,6 @@ F 3 "~" H 800 1300 50  0001 C CNN
 	1    800  1300
 	1    0    0    -1  
 $EndComp
-Text Notes 1000 1150 0    50   ~ 0
-C1 should be big enough\nto have an impedance\nmuch lower than  R1
 $Comp
 L Device:C C1
 U 1 1 5CFCB6E4
@@ -326,4 +280,48 @@ Text Label 6600 4600 0    50   ~ 0
 mic
 Text Label 3600 1600 0    50   ~ 0
 mic
+$Comp
+L Device:R R2
+U 1 1 5CF3A31B
+P 2400 1250
+F 0 "R2" V 2193 1250 50  0000 C CNN
+F 1 "68k" V 2284 1250 50  0000 C CNN
+F 2 "" V 2330 1250 50  0001 C CNN
+F 3 "~" H 2400 1250 50  0001 C CNN
+	1    2400 1250
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:C C3
+U 1 1 5CFFC42F
+P 2400 900
+F 0 "C3" V 2148 900 50  0000 C CNN
+F 1 "17.5p" V 2239 900 50  0000 C CNN
+F 2 "" H 2438 750 50  0001 C CNN
+F 3 "~" H 2400 900 50  0001 C CNN
+	1    2400 900 
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R3
+U 1 1 5CF9947D
+P 1800 1950
+F 0 "R3" H 1870 1996 50  0000 L CNN
+F 1 "500k" H 1870 1905 50  0000 L CNN
+F 2 "" V 1730 1950 50  0001 C CNN
+F 3 "~" H 1800 1950 50  0001 C CNN
+	1    1800 1950
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R4
+U 1 1 5CF9968A
+P 1800 2300
+F 0 "R4" H 1870 2346 50  0000 L CNN
+F 1 "100k" H 1870 2255 50  0000 L CNN
+F 2 "" V 1730 2300 50  0001 C CNN
+F 3 "~" H 1800 2300 50  0001 C CNN
+	1    1800 2300
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
