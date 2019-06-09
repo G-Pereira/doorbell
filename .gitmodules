@@ -1,4 +1,3 @@
 [submodule "ringer/components/esp32-camera"]
 	path = ringer/components/esp32-camera
 	url = https://github.com/espressif/esp32-camera
-	branch = master

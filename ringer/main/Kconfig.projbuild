@@ -1,14 +1,84 @@
-menu "Example Configuration"
+menu "ESP32 Door Bell Configuration"
 
-config BLINK_GPIO
-    int "Blink GPIO number"
-	range 0 34
-	default 5
-	help
-		GPIO number (IOxx) to blink on and off.
+config WIFI_SSID
+    string "WiFi SSID"
+    default ""
+    help
+        SSID (network name) for the demo to connect to.
 
-		Some GPIOs are used for other purposes (flash connections, etc.) and cannot be used to blink.
+config WIFI_PASSWORD
+    string "WiFi Password"
+    default ""
+    help
+        Password for your network.
+        
+config XCLK_FREQ
+    int "XCLK Frequency"
+    default "20000000"
+    help
+        The XCLK Frequency in Herz.
 
-		GPIOs 35-39 are input-only so cannot be used as outputs.
+config JPEG_QUALITY
+    int "JPEG Quality"
+    default "5"
+    help
+	The amount of compression (0-63)
+
+menu "Pin Configuration"
+    config CAM_PIN_D0
+        int "D0"
+        default "5"
+    config CAM_PIN_D1
+        int "D1"
+        default "14"
+    config CAM_PIN_D2
+        int "D2"
+        default "18"
+    config CAM_PIN_D3
+        int "D3"
+        default "19"
+    config CAM_PIN_D4
+        int "D4"
+        default "36"
+    config CAM_PIN_D5
+        int "D5"
+        default "39"
+    config CAM_PIN_D6
+        int "D6"
+        default "34"
+    config CAM_PIN_D7
+        int "D7"
+        default "35"
+    config CAM_PIN_XCLK
+        int "XCLK"
+        default "21"
+    config CAM_PIN_PCLK
+        int "PCLK"
+        default "22"
+    config CAM_PIN_VSYNC
+        int "VSYNC"
+        default "25"
+    config CAM_PIN_HREF
+        int "HREF"
+        default "23"
+    config CAM_PIN_SIOD
+        int "SIOD"
+        default "26"
+    config CAM_PIN_SIOC
+        int "SIOC"
+        default "27"
+    config CAM_PIN_RESET
+        int "RESET"
+        default "-1"
+    config CAM_PIN_PWDN
+        int "PWDN"
+        default "-1"
+    config PIR_PIN
+        int "PIR"
+        default "33"
+    config BELL_BUT_PIN
+        int "BELL_BUT"
+        default "34"
+endmenu
 
 endmenu
