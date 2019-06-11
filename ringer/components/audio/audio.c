@@ -111,7 +111,9 @@ void ringer_audiotx2(uint32_t data){
     servaddr.sin_port = htons(8001); 
     servaddr.sin_addr.s_addr = inet_addr("10.0.0.1");
 
-	sendto(sockfd, &data, 4, 0, (struct sockaddr *)&servaddr, sizeof(servaddr));
+	uint8_t convertedData = data/4096*256;
+
+	sendto(sockfd, &convertedData, 1, 0, (struct sockaddr *)&servaddr, sizeof(servaddr));
   
     close(sockfd);
 }
