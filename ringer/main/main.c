@@ -1,21 +1,27 @@
-/* Blink Example
-
-   This example code is in the Public Domain (or CC0 licensed, at your option.)
-
-   Unless required by applicable law or agreed to in writing, this
-   software is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
-   CONDITIONS OF ANY KIND, either express or implied.
-*/
 #include <stdio.h>
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
-#include "driver/gpio.h"
-#include "sdkconfig.h"
+#include <driver/adc.h>
+#include <esp_log.h>
 #include "wifi.h"
 #include "audio.h"
+#include "nvs_flash.h"
+
+void sampleMic(){
+    while(1) {
+        uint32_t val = adc1_get_raw(ADC1_CHANNEL_6);
+        ESP_LOGI("sample_mic" , "MIC: %d", val);
+        ringer_audiotx2(val);
+        //vTaskDelay(10 / portTICK_PERIOD_MS);
+    }
+}
+
 void app_main()
 {
-	startAP();
-	xTaskCreate(ringer_audiorx, "audio_out", 4096, NULL, 5, NULL);
-	printf("SDK version:%s\n", esp_get_idf_version());
+    adc1_config_width(ADC_WIDTH_BIT_9);
+    adc1_config_channel_atten(ADC1_CHANNEL_6,ADC_ATTEN_DB_0);
+    nvs_flash_init();
+    nvs_flash_erase();
+    connectWiFi();
+    xTaskCreate(sampleMic, "sample_mic", 4096, NULL, 5, NULL);
 }
