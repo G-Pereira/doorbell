@@ -1,0 +1,2 @@
+void startAP();
+void connectWiFi();
