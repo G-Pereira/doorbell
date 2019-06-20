@@ -16,255 +16,8 @@ Comment4 ""
 $EndDescr
 Text Notes 1600 650  0    50   ~ 0
 Microphone
-$Comp
-L Amplifier_Operational:TL074 U2
-U 1 1 5CF3209B
-P 2450 1600
-F 0 "U2" H 2450 1967 50  0000 C CNN
-F 1 "TL074" H 2450 1876 50  0000 C CNN
-F 2 "" H 2400 1700 50  0001 C CNN
-F 3 "http://www.ti.com/lit/ds/symlink/tl071.pdf" H 2500 1800 50  0001 C CNN
-F 4 "X" H 2450 1600 50  0001 C CNN "Spice_Primitive"
-F 5 "TL074" H 2450 1600 50  0001 C CNN "Spice_Model"
-F 6 "Y" H 2450 1600 50  0001 C CNN "Spice_Netlist_Enabled"
-F 7 "3,2,4,11,1" H 2450 1600 50  0001 C CNN "Spice_Node_Sequence"
-F 8 "spice/TL074.301" H 2450 1600 50  0001 C CNN "Spice_Lib_File"
-	1    2450 1600
-	1    0    0    1   
-$EndComp
 Text Notes 6000 7400 0    50   ~ 0
 TODO\nDecoupling capacitors
-$Comp
-L power:+3.3V #PWR05
-U 1 1 5CF9887D
-P 1800 1750
-F 0 "#PWR05" H 1800 1600 50  0001 C CNN
-F 1 "+3.3V" H 1815 1923 50  0000 C CNN
-F 2 "" H 1800 1750 50  0001 C CNN
-F 3 "" H 1800 1750 50  0001 C CNN
-	1    1800 1750
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	1800 2150 1800 2100
-$Comp
-L power:GND #PWR06
-U 1 1 5CF9A06C
-P 1800 2500
-F 0 "#PWR06" H 1800 2250 50  0001 C CNN
-F 1 "GND" H 1805 2327 50  0000 C CNN
-F 2 "" H 1800 2500 50  0001 C CNN
-F 3 "" H 1800 2500 50  0001 C CNN
-	1    1800 2500
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	1800 2500 1800 2450
-Wire Wire Line
-	1800 1800 1800 1750
-$Comp
-L Device:Microphone_Condenser MK1
-U 1 1 5CF9E4DD
-P 800 1800
-F 0 "MK1" H 930 1846 50  0000 L CNN
-F 1 "Electret Microphone" H 930 1755 50  0000 L CNN
-F 2 "" V 800 1900 50  0001 C CNN
-F 3 "~" V 800 1900 50  0001 C CNN
-	1    800  1800
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:C C2
-U 1 1 5CF9F0F8
-P 2150 2300
-F 0 "C2" H 2265 2346 50  0000 L CNN
-F 1 "2.2u" H 2265 2255 50  0000 L CNN
-F 2 "" H 2188 2150 50  0001 C CNN
-F 3 "~" H 2150 2300 50  0001 C CNN
-	1    2150 2300
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	2250 1250 2100 1250
-Wire Wire Line
-	2100 1250 2100 1500
-Wire Wire Line
-	2100 1500 2150 1500
-Wire Wire Line
-	2550 1250 2750 1250
-Wire Wire Line
-	2750 1250 2750 1600
-$Comp
-L power:GND #PWR02
-U 1 1 5CFBF6AB
-P 800 2050
-F 0 "#PWR02" H 800 1800 50  0001 C CNN
-F 1 "GND" H 805 1877 50  0000 C CNN
-F 2 "" H 800 2050 50  0001 C CNN
-F 3 "" H 800 2050 50  0001 C CNN
-	1    800  2050
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	800  2050 800  2000
-Wire Wire Line
-	2150 2450 2150 2500
-Wire Wire Line
-	2150 2500 1800 2500
-Connection ~ 1800 2500
-Wire Wire Line
-	2150 2150 1800 2150
-Connection ~ 1800 2150
-$Comp
-L power:+3.3V #PWR01
-U 1 1 5CFCC0AD
-P 800 1100
-F 0 "#PWR01" H 800 950 50  0001 C CNN
-F 1 "+3.3V" H 815 1273 50  0000 C CNN
-F 2 "" H 800 1100 50  0001 C CNN
-F 3 "" H 800 1100 50  0001 C CNN
-	1    800  1100
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	2150 2150 2150 1700
-Connection ~ 2150 2150
-Wire Wire Line
-	800  1150 800  1100
-Wire Wire Line
-	800  1450 800  1500
-Connection ~ 800  1500
-Wire Wire Line
-	800  1500 800  1600
-Connection ~ 2100 1500
-Wire Wire Line
-	2250 900  2100 900 
-Wire Wire Line
-	2100 900  2100 1250
-Connection ~ 2100 1250
-Wire Wire Line
-	2550 900  2750 900 
-Wire Wire Line
-	2750 900  2750 1250
-Connection ~ 2750 1250
-Wire Wire Line
-	2850 1600 2750 1600
-Connection ~ 2750 1600
-Wire Wire Line
-	3250 1600 3150 1600
-Wire Wire Line
-	3550 1600 3600 1600
-Wire Wire Line
-	3600 1600 3600 1650
-$Comp
-L power:GND #PWR07
-U 1 1 5D00C5DF
-P 3600 2000
-F 0 "#PWR07" H 3600 1750 50  0001 C CNN
-F 1 "GND" H 3605 1827 50  0000 C CNN
-F 2 "" H 3600 2000 50  0001 C CNN
-F 3 "" H 3600 2000 50  0001 C CNN
-	1    3600 2000
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	3600 2000 3600 1950
-$Comp
-L Amplifier_Operational:TL074 U2
-U 5 1 5CF260EC
-P 900 2950
-F 0 "U2" H 858 2996 50  0000 L CNN
-F 1 "TL074" H 858 2905 50  0000 L CNN
-F 2 "" H 850 3050 50  0001 C CNN
-F 3 "http://www.ti.com/lit/ds/symlink/tl071.pdf" H 950 3150 50  0001 C CNN
-	5    900  2950
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:+3.3V #PWR03
-U 1 1 5CF8D3B6
-P 800 2550
-F 0 "#PWR03" H 800 2400 50  0001 C CNN
-F 1 "+3.3V" H 815 2723 50  0000 C CNN
-F 2 "" H 800 2550 50  0001 C CNN
-F 3 "" H 800 2550 50  0001 C CNN
-	1    800  2550
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	800  2550 800  2650
-$Comp
-L power:GND #PWR04
-U 1 1 5CF8DB09
-P 800 3350
-F 0 "#PWR04" H 800 3100 50  0001 C CNN
-F 1 "GND" H 805 3177 50  0000 C CNN
-F 2 "" H 800 3350 50  0001 C CNN
-F 3 "" H 800 3350 50  0001 C CNN
-	1    800  3350
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	800  3350 800  3250
-$Comp
-L Device:R R1
-U 1 1 5CFCC6D1
-P 800 1300
-F 0 "R1" H 870 1346 50  0000 L CNN
-F 1 "2.2k" H 870 1255 50  0000 L CNN
-F 2 "" V 730 1300 50  0001 C CNN
-F 3 "~" H 800 1300 50  0001 C CNN
-	1    800  1300
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:C C1
-U 1 1 5CFCB6E4
-P 1350 1500
-F 0 "C1" V 1098 1500 50  0000 C CNN
-F 1 "2.2u" V 1189 1500 50  0000 C CNN
-F 2 "" H 1388 1350 50  0001 C CNN
-F 3 "~" H 1350 1500 50  0001 C CNN
-	1    1350 1500
-	0    1    1    0   
-$EndComp
-Wire Wire Line
-	1500 1500 2100 1500
-Wire Wire Line
-	1200 1500 800  1500
-$Comp
-L Device:R R6
-U 1 1 5D00B5E9
-P 3600 1800
-F 0 "R6" H 3670 1846 50  0000 L CNN
-F 1 "100k" H 3670 1755 50  0000 L CNN
-F 2 "" V 3530 1800 50  0001 C CNN
-F 3 "~" H 3600 1800 50  0001 C CNN
-	1    3600 1800
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:C C4
-U 1 1 5D00A8FD
-P 3400 1600
-F 0 "C4" V 3148 1600 50  0000 C CNN
-F 1 "2.2u" V 3239 1600 50  0000 C CNN
-F 2 "" H 3438 1450 50  0001 C CNN
-F 3 "~" H 3400 1600 50  0001 C CNN
-	1    3400 1600
-	0    1    1    0   
-$EndComp
-$Comp
-L Device:R R5
-U 1 1 5D009B02
-P 3000 1600
-F 0 "R5" V 2793 1600 50  0000 C CNN
-F 1 "47" V 2884 1600 50  0000 C CNN
-F 2 "" V 2930 1600 50  0001 C CNN
-F 3 "~" H 3000 1600 50  0001 C CNN
-	1    3000 1600
-	0    1    1    0   
-$EndComp
 $Comp
 L RF_Module:ESP32-WROOM-32 U?
 U 1 1 5D04A5B5
@@ -278,50 +31,185 @@ F 3 "https://www.espressif.com/sites/default/files/documentation/esp32-wroom-32_
 $EndComp
 Text Label 6600 4600 0    50   ~ 0
 mic
-Text Label 3600 1600 0    50   ~ 0
+$Comp
+L Transistor_BJT:2N2219 Q?
+U 1 1 5D0C287C
+P 1850 1650
+F 0 "Q?" H 2040 1696 50  0000 L CNN
+F 1 "2N2219" H 2040 1605 50  0000 L CNN
+F 2 "Package_TO_SOT_THT:TO-39-3" H 2050 1575 50  0001 L CIN
+F 3 "http://www.onsemi.com/pub_link/Collateral/2N2219-D.PDF" H 1850 1650 50  0001 L CNN
+	1    1850 1650
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR?
+U 1 1 5D0C3661
+P 1950 950
+F 0 "#PWR?" H 1950 800 50  0001 C CNN
+F 1 "+3.3V" H 1965 1123 50  0000 C CNN
+F 2 "" H 1950 950 50  0001 C CNN
+F 3 "" H 1950 950 50  0001 C CNN
+	1    1950 950 
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 5D0C3A49
+P 1950 1200
+F 0 "R?" H 2020 1246 50  0000 L CNN
+F 1 "10k" H 2020 1155 50  0000 L CNN
+F 2 "" V 1880 1200 50  0001 C CNN
+F 3 "~" H 1950 1200 50  0001 C CNN
+	1    1950 1200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1950 1050 1950 1000
+Wire Wire Line
+	1950 1450 1950 1400
+$Comp
+L Device:R R?
+U 1 1 5D0C7748
+P 1700 1400
+F 0 "R?" V 1493 1400 50  0000 C CNN
+F 1 "100k" V 1584 1400 50  0000 C CNN
+F 2 "" V 1630 1400 50  0001 C CNN
+F 3 "~" H 1700 1400 50  0001 C CNN
+	1    1700 1400
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 5D0C7C59
+P 850 1250
+F 0 "R?" H 780 1204 50  0000 R CNN
+F 1 "10k" H 780 1295 50  0000 R CNN
+F 2 "" V 780 1250 50  0001 C CNN
+F 3 "~" H 850 1250 50  0001 C CNN
+	1    850  1250
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:C C?
+U 1 1 5D0C88D8
+P 1250 1650
+F 0 "C?" V 998 1650 50  0000 C CNN
+F 1 "100n" V 1089 1650 50  0000 C CNN
+F 2 "" H 1288 1500 50  0001 C CNN
+F 3 "~" H 1250 1650 50  0001 C CNN
+	1    1250 1650
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	1850 1400 1950 1400
+Connection ~ 1950 1400
+Wire Wire Line
+	1950 1400 1950 1350
+$Comp
+L Device:Microphone_Condenser MK?
+U 1 1 5D0C96FD
+P 850 1900
+F 0 "MK?" H 980 1946 50  0000 L CNN
+F 1 "Microphone_Condenser" H 980 1855 50  0000 L CNN
+F 2 "" V 850 2000 50  0001 C CNN
+F 3 "~" V 850 2000 50  0001 C CNN
+	1    850  1900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	850  1700 850  1650
+Wire Wire Line
+	850  1650 1100 1650
+Wire Wire Line
+	850  1100 850  1000
+Wire Wire Line
+	1950 950  1950 1000
+Wire Wire Line
+	850  1400 850  1650
+Connection ~ 850  1650
+$Comp
+L power:GND #PWR?
+U 1 1 5D0D0805
+P 1950 2150
+F 0 "#PWR?" H 1950 1900 50  0001 C CNN
+F 1 "GND" H 1955 1977 50  0000 C CNN
+F 2 "" H 1950 2150 50  0001 C CNN
+F 3 "" H 1950 2150 50  0001 C CNN
+	1    1950 2150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	850  2150 850  2100
+Wire Wire Line
+	1950 1850 1950 2150
+Wire Wire Line
+	1400 1650 1500 1650
+Wire Wire Line
+	1550 1400 1500 1400
+Wire Wire Line
+	1500 1400 1500 1650
+Connection ~ 1500 1650
+Wire Wire Line
+	1500 1650 1650 1650
+$Comp
+L Device:C C?
+U 1 1 5D0D5E44
+P 2300 1400
+F 0 "C?" V 2048 1400 50  0000 C CNN
+F 1 "100n" V 2139 1400 50  0000 C CNN
+F 2 "" H 2338 1250 50  0001 C CNN
+F 3 "~" H 2300 1400 50  0001 C CNN
+	1    2300 1400
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	2150 1400 1950 1400
+$Comp
+L Device:R R?
+U 1 1 5D0D7FB2
+P 2650 1200
+F 0 "R?" H 2720 1246 50  0000 L CNN
+F 1 "1k" H 2720 1155 50  0000 L CNN
+F 2 "" V 2580 1200 50  0001 C CNN
+F 3 "~" H 2650 1200 50  0001 C CNN
+	1    2650 1200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 5D0D84BB
+P 2650 1600
+F 0 "R?" H 2720 1646 50  0000 L CNN
+F 1 "1k" H 2720 1555 50  0000 L CNN
+F 2 "" V 2580 1600 50  0001 C CNN
+F 3 "~" H 2650 1600 50  0001 C CNN
+	1    2650 1600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2450 1400 2650 1400
+Wire Wire Line
+	2650 1450 2650 1400
+Connection ~ 2650 1400
+Wire Wire Line
+	2650 1400 2900 1400
+Wire Wire Line
+	2650 1350 2650 1400
+Wire Wire Line
+	2650 1750 2650 2150
+Wire Wire Line
+	2650 2150 1950 2150
+Connection ~ 1950 2150
+Wire Wire Line
+	2650 1050 2650 1000
+Wire Wire Line
+	2650 1000 1950 1000
+Connection ~ 1950 1000
+Wire Wire Line
+	850  1000 1950 1000
+Wire Wire Line
+	850  2150 1950 2150
+Text Label 2900 1400 0    50   ~ 0
 mic
-$Comp
-L Device:R R2
-U 1 1 5CF3A31B
-P 2400 1250
-F 0 "R2" V 2193 1250 50  0000 C CNN
-F 1 "68k" V 2284 1250 50  0000 C CNN
-F 2 "" V 2330 1250 50  0001 C CNN
-F 3 "~" H 2400 1250 50  0001 C CNN
-	1    2400 1250
-	0    1    1    0   
-$EndComp
-$Comp
-L Device:C C3
-U 1 1 5CFFC42F
-P 2400 900
-F 0 "C3" V 2148 900 50  0000 C CNN
-F 1 "17.5p" V 2239 900 50  0000 C CNN
-F 2 "" H 2438 750 50  0001 C CNN
-F 3 "~" H 2400 900 50  0001 C CNN
-	1    2400 900 
-	0    1    1    0   
-$EndComp
-$Comp
-L Device:R R3
-U 1 1 5CF9947D
-P 1800 1950
-F 0 "R3" H 1870 1996 50  0000 L CNN
-F 1 "500k" H 1870 1905 50  0000 L CNN
-F 2 "" V 1730 1950 50  0001 C CNN
-F 3 "~" H 1800 1950 50  0001 C CNN
-	1    1800 1950
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:R R4
-U 1 1 5CF9968A
-P 1800 2300
-F 0 "R4" H 1870 2346 50  0000 L CNN
-F 1 "100k" H 1870 2255 50  0000 L CNN
-F 2 "" V 1730 2300 50  0001 C CNN
-F 3 "~" H 1800 2300 50  0001 C CNN
-	1    1800 2300
-	1    0    0    -1  
-$EndComp
 $EndSCHEMATC
